@@ -5,7 +5,7 @@ import React, { Component } from 'react'
  import Header from './components/haeder/header';
  import SigninUp from './pages/Signup/sign-in-Up';
  import { Route ,Switch } from "react-router-dom";
- import { auth } from './firebase/firebase.utility';
+ import { auth , createDocument} from './firebase/firebase.utility';
 
  
  
@@ -21,8 +21,20 @@ import React, { Component } from 'react'
     unsubscribeFromAuth = null;
     
     componentDidMount(){
-      this.unsubscribeFromAuth = auth.onAuthStateChanged( user =>{ this.setState({currentuser : user})
-      
+      this.unsubscribeFromAuth = auth.onAuthStateChanged( async userAuth =>{ 
+     if(userAuth){
+      const userRef = await createDocument(userAuth); 
+
+      userRef.onSnapshot(snapShot => {
+         this.setState({
+           id : snapShot.id,
+           ...snapShot.data()
+         })
+      })
+     }
+       else{
+         this.setState({ currentuser : userAuth})
+       }
     })
     }
 

@@ -27,7 +27,7 @@ export default class Signin extends Component {
 
     render() {
         
-         const {email , password} = this.state
+         const {email , password} = this.state;
         return (
         <div className='sign-in'>
             <h2>I already have an account</h2>
@@ -50,7 +50,7 @@ export default class Signin extends Component {
                     label='password'
                      required  
                    />
-                   <div class="button">
+                   <div className="button">
                        <Custombtn type="submit">Sign In</Custombtn>
                        <Custombtn onClick={signInWithGoogle} isGoogleSignin>Sign In with Google</Custombtn>
                    </div>
