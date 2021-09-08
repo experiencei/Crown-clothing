@@ -6,13 +6,12 @@ import React, { Component } from 'react'
  import { connect } from 'react-redux';
  import { setCurrentUser } from './redux/user/user.actions.';
  import SigninUp from './pages/Signup/sign-in-Up';
- import { Route ,Switch } from "react-router-dom";
+ import { Route ,Switch ,Redirect } from "react-router-dom";
  import { auth , createDocument} from './firebase/firebase.utility';
 
  
  
  class App extends Component {
-   
 
     unsubscribeFromAuth = null;
     
