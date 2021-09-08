@@ -44,7 +44,7 @@ import React, { Component } from 'react'
    render() {
      return (
        <div>
-      <Header />
+      <Header currentState={this.state.currentuser}/>
       <Switch>
       <Route exact path="/" component={ Homepages }/>
       <Route  exact path="/shop" component={ Shoppage }/>
