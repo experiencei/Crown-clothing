@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { auth } from "../../firebase/firebase.utility";
 import "./header.scss"
 import { ReactComponent as Logo } from "../assests/crown.svg"
-
+import Carticon from "../cart-icon/cart.icon";
  function Header({currentState}) {
     return (
         <div className="header">
@@ -19,6 +19,7 @@ import { ReactComponent as Logo } from "../assests/crown.svg"
            CONTACT
         </Link>
         {currentState ?( <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>) : (<Link className='option' to="/signin">SIGN IN</Link>)}
+        <Carticon/>
       </div>
    </div>
  )
