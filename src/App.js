@@ -29,7 +29,7 @@ import React, { Component } from 'react'
       })
      }
        else{
-        setCurrentUser({userAuth})
+        setCurrentUser(userAuth);
        }
     })
     }
@@ -48,9 +48,9 @@ import React, { Component } from 'react'
             exact
             path='/signin'
             render={() =>
-              this.props.currentUser ? (
+              this.props.currentuser ? (
                 <Redirect to='/' />
-              ) : ( 
+              ) : (
                 <SigninUp />
               )
             }
@@ -61,8 +61,8 @@ import React, { Component } from 'react'
    }
  }
 
- const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser
+ const mapStateToProps = ({user}) => ({
+   currentuser : user.currentuser
 });
 
 const mapDispatchToProps = dispatch => ({
