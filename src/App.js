@@ -50,7 +50,7 @@ import React, { Component } from 'react'
             render={() =>
               this.props.currentUser ? (
                 <Redirect to='/' />
-              ) : (
+              ) : ( 
                 <SigninUp />
               )
             }

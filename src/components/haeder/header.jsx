@@ -5,7 +5,8 @@ import { auth } from "../../firebase/firebase.utility";
 import "./header.scss"
 import { ReactComponent as Logo } from "../assests/crown.svg"
 import Carticon from "../cart-icon/cart.icon";
- function Header({currentState}) {
+import Cartdropdowm from "../cart-dropdown/cart-dropdowm";
+ function Header({currentState ,hidden}) {
     return (
         <div className="header">
       <Link className="logo-container" to ="/">
@@ -21,13 +22,15 @@ import Carticon from "../cart-icon/cart.icon";
         {currentState ?( <div className='option' onClick={() => auth.signOut()}>SIGN OUT</div>) : (<Link className='option' to="/signin">SIGN IN</Link>)}
         <Carticon/>
       </div>
+      {hidden? null : <Cartdropdowm /> }
    </div>
  )
-    
+ 
 }
 
-const mapStateToProps = (state) => ({
-   currentState : state.user.currentuser
-})
+const mapStateToProps = ({user :{currentuser} , cart :{hidden}}) => ({
+   currentuser,
+   hidden
+});
 
 export default connect (mapStateToProps)(Header)
