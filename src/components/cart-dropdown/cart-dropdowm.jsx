@@ -1,10 +1,11 @@
 import React from "react";
 import Custombtn from "../customButton/custombtn";
-import Cartitem from "../cart-item/cart-item"
+import Cartitem from "../cart-item/cart-item";
+import { selectCartItems } from '../../redux/cart/cart.selector';
 import { connect } from 'react-redux'
 import "./cart-dropdown.scss";
 
- function Cartdropdowm({cart }) {
+ function Cartdropdowm({cart}) {
     return (
     <div className='cart-dropdown'>
     <div className='cart-items'>
@@ -19,8 +20,8 @@ import "./cart-dropdown.scss";
     )
 }
 
-const mapStateToProps = ({cart : {cart}}) => ({
-  cart
+const mapStateToProps = state => ({
+  cart : selectCartItems(state)
 })
 
 
