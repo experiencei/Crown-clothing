@@ -20,4 +20,4 @@ function Shopitem({item , addCart}) {
 const mapDispatchToProps = dispatch => ({
     addCart: item => dispatch(addCart(item))
   });
-export default connect(null ,mapDispatchToProps)(Shopitem)
+export default connect(null,mapDispatchToProps)(Shopitem)
