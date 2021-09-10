@@ -4,6 +4,10 @@ import React, { Component } from 'react'
  import Shoppage from './pages/shoppages/shoppage';
  import Header from './components/haeder/header';
  import { connect } from 'react-redux';
+
+ import cartCheckout from './pages/checkout/cart-checkout';
+ import { createStructuredSelector } from "reselect";
+ import { selectUser } from "../src/redux/user/user.selector"
  import { setCurrentUser } from './redux/user/user.actions.';
  import SigninUp from './pages/Signup/sign-in-Up';
  import { Route ,Switch ,Redirect } from "react-router-dom";
@@ -44,6 +48,7 @@ import React, { Component } from 'react'
       <Switch>
       <Route exact path="/" component={ Homepages }/>
       <Route  exact path="/shop" component={ Shoppage }/>
+      <Route  exact path="/checkout" component={ cartCheckout }/>
       <Route
             exact
             path='/signin'
@@ -61,8 +66,8 @@ import React, { Component } from 'react'
    }
  }
 
- const mapStateToProps = ({user}) => ({
-   currentuser : user.currentuser
+ const mapStateToProps =createStructuredSelector({
+   currentuser : selectUser
 });
 
 const mapDispatchToProps = dispatch => ({
