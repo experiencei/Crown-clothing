@@ -3,8 +3,6 @@ import "./shoppreview.scss";
 import Shopitem from '../shop-item/shopitem'
 
 function Shoppreview({title , items}) {
-
-
     return (
         <div className='collection-preview'>
              <h1 className="title">{title.toUpperCase()}</h1>
@@ -18,4 +16,4 @@ function Shoppreview({title , items}) {
     )
 }
 
-export default Shoppreview
+export default Shoppreview;
