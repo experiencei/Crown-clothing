@@ -4,6 +4,7 @@ import React, { Component } from 'react'
  import Shoppage from './pages/shoppages/shoppage';
  import Header from './components/haeder/header';
  import { connect } from 'react-redux';
+ 
 
  import cartCheckout from './pages/checkout/cart-checkout';
  import { createStructuredSelector } from "reselect";
@@ -48,6 +49,7 @@ import React, { Component } from 'react'
       <Switch>
       <Route exact path="/" component={ Homepages }/>
       <Route  exact path="/shop" component={ Shoppage }/>
+    
       <Route  exact path="/checkout" component={ cartCheckout }/>
       <Route
             exact
