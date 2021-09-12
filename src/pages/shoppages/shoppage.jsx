@@ -1,12 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { Route } from 'react-router-dom';
 import Shopextent from '../../components/shopext/shopextent';
-function Shoppage () {
+import Collectionpreview from '../collection/collectionpreview';
+const Shoppage = ({ match }) => {
  return (
             <div>
-               <Shopextent />
+<Route exact path={`${match.path}`} component={Shopextent} />
+<Route path={`${match.path}/:collectionId`} component={Collectionpreview}/>
             </div>
         )
     }
-
-    export default Shoppage;
+ export default Shoppage;
     

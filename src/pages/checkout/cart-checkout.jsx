@@ -35,7 +35,7 @@ function Cartcheckout({cart , total }) {
   </div>
     )
 };
-const mapStateToProps =createStructuredSelector({
+const mapStateToProps = createStructuredSelector({
     cart : selectCartItems,
     total : selectTotal
  });
