@@ -34,8 +34,8 @@ import Shopitem from "../../components/shop-item/shopitem";
 import { selectCollection } from '../../redux/shop/shop.selector';
 
 
-const CollectionPage = ({ shopdata }) => {
-  const { title, items } = shopdata;
+const CollectionPage = ({ collection }) => {
+  const { title, items } = collection;
   return (
     <div className='collection-page'>
       <h2 className='title'>{title}</h2>
@@ -49,7 +49,7 @@ const CollectionPage = ({ shopdata }) => {
 };
 
 const mapStateToProps = (state, ownProps) => ({
-  shopdata: selectCollection(ownProps.match.params.collectionId)(state)
+  collection: selectCollection(ownProps.match.params.collectionId)(state)
 });
 
 export default connect(mapStateToProps)(CollectionPage);
