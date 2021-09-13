@@ -28,7 +28,7 @@ export default class Signup extends Component {
 
     try {
         const {user} = await auth.createUserWithEmailAndPassword(email , password);
-       createDocument(user ,{displayName})
+       await createDocument(user ,{displayName})
 
        this.setState({
         dipslayName : '',
