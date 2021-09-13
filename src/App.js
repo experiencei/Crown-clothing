@@ -47,7 +47,7 @@ import React, { Component } from 'react'
       <Header />
       <Switch>
       <Route exact path="/" component={ Homepages }/>
-      <Route  exact path="/shop" component={ Shoppage }/>
+      <Route   path="/shop" component={ Shoppage }/>
       <Route  exact path="/checkout" component={ cartCheckout }/>
       <Route
             exact

@@ -1,16 +1,15 @@
-import SHOP_DATA from "./shop.data";
-import { shopTypes } from "./shop.types";
+import SHOP_DATA from './shop.data';
 
-const initialState = {
-  shopdata : SHOP_DATA
-}
+const INITIAL_STATE = {
+  collections: SHOP_DATA
+};
 
-const shopReducer = (state = initialState, { type, payload }) => {
-    switch (type) {
-    case shopTypes.SHOP_TYPES:
+const shopReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
     default:
-        return state
-    }
-}
-export default shopReducer
+      return state;
+  }
+};
+
+export default shopReducer;
 

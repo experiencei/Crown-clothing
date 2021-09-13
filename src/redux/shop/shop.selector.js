@@ -8,17 +8,17 @@ import { createSelector } from "reselect";
 //     mens : 5
 // }         .find( shopdate => shopdate.id === COLLECTION_ID_MAP[collectionUrlParam])
 
-const shoppageSelect = state => state.shoppages;
+const shoppageSelect = state => state.shop;
 
 
 export const ShopSelect = createSelector(
     [shoppageSelect],
-    shoppages =>  shoppages.shopdata
+    shop =>  shop.collections
 )
 
 export const ShopSelect1 = createSelector(
   [ShopSelect],
-  shoppages => Object.keys(shoppages).map( key => shoppages[key] )
+  collections => Object.keys(collections).map( key => collections[key] )
 )
 
 
@@ -26,6 +26,26 @@ export const ShopSelect1 = createSelector(
 export const selectCollection = collectionUrlParam =>
   createSelector(
     [ShopSelect],
-    shopdata => shopdata[collectionUrlParam]
+    collections => collections[collectionUrlParam]
   );
 
+
+  // import { createSelector } from 'reselect';
+
+  // const selectShop = state => state.shop;
+  
+  // export const selectCollections = createSelector(
+  //   [selectShop],
+  //   shop => shop.collections
+  // );
+  
+  // export const selectCollectionsForPreview = createSelector(
+  //   [selectCollections],
+  //   collections => Object.keys(collections).map(key => collections[key])
+  // );
+  
+  // export const selectCollection = collectionUrlParam =>
+  //   createSelector(
+  //     [selectCollections],
+  //     collections => collections[collectionUrlParam]
+  //   );
