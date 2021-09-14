@@ -14,7 +14,7 @@ export default class Signin extends Component {
            password : ''
         }
     }
-    handleSubmit = async e => { 
+    handleSubmit = async e => {
      e.preventDefault();
      const {email , password} = this.state;
       try {
